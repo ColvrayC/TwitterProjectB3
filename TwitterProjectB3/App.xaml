@@ -4,11 +4,13 @@
              xmlns:local="clr-namespace:TwitterProjectB3" 
              StartupUri="Views/MainView.xaml" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Converters="clr-namespace:TwitterProjectB3.Converter"
              d1p1:Ignorable="d" xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:TwitterProjectB3.Helpers">
     <Application.Resources>
-    <ResourceDictionary>
+        <ResourceDictionary>
             <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
+            <Converters:FrameConverter x:Key="FrameConverter"/>
         </ResourceDictionary>
   </Application.Resources>
 </Application>

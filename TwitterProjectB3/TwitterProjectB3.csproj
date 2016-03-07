@@ -112,6 +112,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converter\FrameConverter.cs" />
     <Compile Include="Helpers\RaisePropertyChangedAttribute.cs" />
     <Compile Include="Helpers\ViewModelLocator.cs" />
     <Compile Include="ViewModel\DataLogin\LoginDataError.cs" />
@@ -167,9 +168,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Converter\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Include="Views\LoginView.xaml">
       <SubType>Designer</SubType>
