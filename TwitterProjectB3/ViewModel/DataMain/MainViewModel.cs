@@ -1,6 +1,6 @@
 using GalaSoft.MvvmLight;
 
-namespace TwitterProjectB3.ViewModel
+namespace TwitterProjectB3.ViewModel.DataMain
 {
     /// <summary>
     /// This class contains properties that the main View can data bind to.

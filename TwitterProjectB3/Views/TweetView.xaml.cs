@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TwitterProjectB3
+namespace TwitterProjectB3.Views
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour TweetView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class TweetView : Page
     {
-        public MainWindow()
+        public TweetView()
         {
             InitializeComponent();
         }
