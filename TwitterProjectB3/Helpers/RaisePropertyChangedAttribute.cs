@@ -12,7 +12,7 @@ namespace TwitterProjectB3.Helpers
     {
         public override ICallHandler CreateHandler(IUnityContainer container)
         {
-            return new PropertyChangedCallHandler();
+            return new PropertyChangedCallHandler(); 
         }
     }
     public class PropertyChangedCallHandler : ICallHandler
