@@ -15,7 +15,7 @@ namespace TwitterProjectB3.Helpers
 
         static ViewModelLocator()
         {
-            MainContainer = new UnityContainer();
+            MainContainer = new UnityContainer(); 
             MainContainer.AddNewExtension<Interception>();
             MainContainer.RegisterType<MainViewModel>().Configure<Interception>().SetInterceptorFor<MainViewModel>(new VirtualMethodInterceptor());
 
