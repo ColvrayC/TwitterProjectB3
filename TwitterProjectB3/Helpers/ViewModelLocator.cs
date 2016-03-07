@@ -6,6 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TwitterProjectB3.ViewModel;
+using TwitterProjectB3.ViewModel.DataLogin;
+using TwitterProjectB3.ViewModel.DataMain;
+using TwitterProjectB3.ViewModel.DataTimeLine;
+using TwitterProjectB3.ViewModel.DataTweet;
 
 namespace TwitterProjectB3.Helpers
 {
@@ -13,6 +17,8 @@ namespace TwitterProjectB3.Helpers
     {
         static IUnityContainer MainContainer;
         static IUnityContainer LoginContainer;
+        static IUnityContainer TimeLineContainer;
+        static IUnityContainer TweetContainer;
 
         static ViewModelLocator()
         {
@@ -25,6 +31,14 @@ namespace TwitterProjectB3.Helpers
             LoginContainer.AddNewExtension<Interception>();
             LoginContainer.RegisterType<LoginViewModel>().Configure<Interception>().SetInterceptorFor<LoginViewModel>(new VirtualMethodInterceptor());
 
+            TimeLineContainer = new UnityContainer();
+            TimeLineContainer.AddNewExtension<Interception>();
+            TimeLineContainer.RegisterType<TimeLineViewModel>().Configure<Interception>().SetInterceptorFor<TimeLineViewModel>(new VirtualMethodInterceptor());
+
+            TweetContainer = new UnityContainer();
+            TweetContainer.AddNewExtension<Interception>();
+            TweetContainer.RegisterType<TweetViewModel>().Configure<Interception>().SetInterceptorFor<TweetViewModel>(new VirtualMethodInterceptor());
+
         }
 
         public MainViewModel Main
@@ -32,9 +46,19 @@ namespace TwitterProjectB3.Helpers
             get { return MainContainer.Resolve<MainViewModel>(); }
         }
 
-        public MainViewModel Login
+        public LoginViewModel Login
         {
             get { return LoginContainer.Resolve<LoginViewModel>(); }
+        }
+
+        public TimeLineViewModel TimeLine
+        {
+            get { return TimeLineContainer.Resolve<TimeLineViewModel>(); }
+        }
+
+        public TweetViewModel Tweet
+        {
+            get { return TweetContainer.Resolve<TweetViewModel>(); }
         }
     }
 }

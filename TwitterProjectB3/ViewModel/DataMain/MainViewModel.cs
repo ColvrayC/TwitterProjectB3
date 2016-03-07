@@ -1,34 +1,74 @@
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
+using TwitterProjectB3.Helpers;
 
 namespace TwitterProjectB3.ViewModel.DataMain
 {
-    /// <summary>
-    /// This class contains properties that the main View can data bind to.
-    /// <para>
-    /// Use the <strong>mvvminpc</strong> snippet to add bindable properties to this ViewModel.
-    /// </para>
-    /// <para>
-    /// You can also use Blend to data bind with the tool's support.
-    /// </para>
-    /// <para>
-    /// See http://www.galasoft.ch/mvvm
-    /// </para>
-    /// </summary>
-    public class MainViewModel : ViewModelBase
+    public partial class MainViewModel : ViewModelBase
     {
+
+        //ConnectionProvider cnn = new ConnectionProvider();
         /// <summary>
-        /// Initializes a new instance of the MainViewModel class.
+        ///COMMAND
+        /// </summary>
+        /// 
+        public RelayCommand CreateCustomerCommand { get; set; }
+        public RelayCommand<string> OpenFlyOutCommand { get; set; }
+
+        public RelayCommand<string> EditModeCommand { get; set; }
+
+
+        // ConnectionProvider Cnn = new ConnectionProvider() ;
+        /// <summary>
+        ///CONSTRUCTEUR
         /// </summary>
         public MainViewModel()
         {
-            ////if (IsInDesignMode)
-            ////{
-            ////    // Code runs in Blend --> create design time data.
-            ////}
-            ////else
-            ////{
-            ////    // Code runs "for real"
-            ////}
+            //OpenFlyOutCommand = new RelayCommand<string>(ShowFlyOut);
+        }
+        /// <summary>
+        /// PROPERTY
+        /// </summary>
+        /// 
+
+
+        [RaisePropertyChanged]
+        public virtual string BindCurrentMode { get; set; }
+
+
+        [RaisePropertyChanged]
+        public virtual bool OpenFlyOut { get; set; }
+
+
+        // Please implement this method in a partial class in order to provide the error message depending on each of the properties.
+        /// <summary>
+        /// METHODES
+        /// </summary>
+        /// 
+
+        /// <summary>
+        /// ERROR 
+        /// </summary>
+        private string error = string.Empty;
+        public string Error { get { return this.error; } }
+        public string this[string propertyName]
+        {
+            get
+            {
+                this.ValidatePropertyInternal(propertyName, ref this.error);
+                return this.error;
+            }
+        }
+        protected virtual void ValidatePropertyInternal(string propertyName, ref string error)
+        {
+            this.ValidateProperty(propertyName, ref error);
+        }
+
+        //CleanUp
+        public override void Cleanup()
+        {
+
+            base.Cleanup();
         }
     }
 }

@@ -114,18 +114,26 @@
     </ApplicationDefinition>
     <Compile Include="Helpers\RaisePropertyChangedAttribute.cs" />
     <Compile Include="Helpers\ViewModelLocator.cs" />
+    <Compile Include="ViewModel\DataLogin\LoginDataError.cs" />
     <Compile Include="ViewModel\DataLogin\LoginViewModel.cs" />
+    <Compile Include="ViewModel\DataMain\MainDataError.cs" />
     <Compile Include="ViewModel\DataMain\MainViewModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModel\DataTimeLine\TimeLineDataError.cs" />
     <Compile Include="ViewModel\DataTimeLine\TimeLineViewModel.cs" />
+    <Compile Include="ViewModel\DataTweet\TweetDataError.cs" />
+    <Compile Include="ViewModel\DataTweet\TweetViewModel.cs" />
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TimeLineView.xaml.cs">
+      <DependentUpon>TimeLineView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TweetView.xaml.cs">
       <DependentUpon>TweetView.xaml</DependentUpon>
@@ -168,6 +176,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TimeLineView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
