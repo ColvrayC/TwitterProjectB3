@@ -10,7 +10,7 @@ namespace TwitterProjectB3.Helpers
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public class RaisePropertyChangedAttribute : HandlerAttribute
     {
-        public override ICallHandler CreateHandler(IUnityContainer container)
+        public override ICallHandler CreateHandler(IUnityContainer container) 
         {
             return new PropertyChangedCallHandler(); 
         }
