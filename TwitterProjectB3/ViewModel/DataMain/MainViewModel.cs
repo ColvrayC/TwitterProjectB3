@@ -12,10 +12,7 @@ namespace TwitterProjectB3.ViewModel.DataMain
         ///COMMAND
         /// </summary>
         /// 
-        public RelayCommand CreateCustomerCommand { get; set; }
-        public RelayCommand<string> OpenFlyOutCommand { get; set; }
 
-        public RelayCommand<string> EditModeCommand { get; set; }
 
 
         // ConnectionProvider Cnn = new ConnectionProvider() ;
@@ -33,11 +30,8 @@ namespace TwitterProjectB3.ViewModel.DataMain
 
 
         [RaisePropertyChanged]
-        public virtual string BindCurrentMode { get; set; }
+        public virtual string PathCurrentFrame { get; set; }
 
-
-        [RaisePropertyChanged]
-        public virtual bool OpenFlyOut { get; set; }
 
 
         // Please implement this method in a partial class in order to provide the error message depending on each of the properties.
